@@ -1,0 +1,75 @@
+Q6. Create a simple image carousel using HTML and JavaScript, Design a basic HTML structure with images,
+<!-- and use JavaScript to implement functionality that allows users to navigate through the images. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <style>
+        /* Carousel container */
+        .carousel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+            margin: 50px auto;
+        }
+
+        /* Image styling */
+        .carousel img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            max-height: 200px;
+        }
+
+        /* Navigation buttons */
+        .carousel button {
+            margin: 10px;
+            padding: 8px 16px;
+            background-color: rgb(55, 135, 144);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .carousel button:hover {
+            background-color: rgb(35, 100, 120);
+        }
+    </style>
+</head>
+<body>
+
+<div class="carousel">
+    <!-- Image element -->
+    <img id="carousel-image" src="image1.jpg" alt="Carousel Image">
+
+    <!-- Navigation buttons -->
+    <button onclick="prevImage()">Previous</button>
+    <button onclick="nextImage()">Next</button>
+</div>
+
+<script>
+    // Array of image sources
+    const images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+    let currentIndex = 0;
+
+    // Display the previous image
+    function prevImage() {
+        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+        document.getElementById("carousel-image").src = images[currentIndex];
+    }
+
+    // Display the next image
+    function nextImage() {
+        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+        document.getElementById("carousel-image").src = images[currentIndex];
+    }
+</script>
+
+</body>
+</html>

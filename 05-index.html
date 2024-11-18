@@ -1,0 +1,31 @@
+<!-- Q5. Create an HTML page with a button. Use JavaScript to display an alert when the button is clicked. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create Button</title>
+    <style>
+        button{
+            background-color: rgb(55, 135, 144);
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button>Click me !</button>
+
+    <script>
+        const btn = document.querySelector('button')
+        btn.addEventListener('click', function(){
+          alert('Button clicked')
+        })
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+(02) Explain the concept of event delegation and provide a scenario where it is beneficial.
+
+Event Delegation is a technique in JavaScript where we attach a single event listener to a parent element rather than attaching separate event listeners to multiple child elements. This parent listener monitors events on its children through event bubbling, which allows the event to "bubble up" from the child element to the parent.
+
+How Event Delegation Works :-
+When an event is triggered on a child element, it propagates up the DOM tree. By placing an event listener on a common parent, we can check which child triggered the event and handle it accordingly. This reduces the number of event listeners needed, which is beneficial for performance, especially when dealing with many child elements.
+
+
+Scenario Where Event Delegation is Beneficial:-
+Imagine you have a list of items, each with a "delete" button. Instead of adding a separate "click" event listener to each button, you can attach one "click" listener to the list’s parent element. When a delete button is clicked, the event bubbles up to the parent, where you can identify the target and remove the specific item.
+
+
+This approach is efficient because:-
+
+1. You only need one event listener, no matter how many items are in the list.
+2. If new items are added dynamically, you don’t need to attach additional listeners to them—they are automatically handled by the parent’s listener.
+
+Example Code:
+
+// Parent element (e.g., an unordered list)
+document.getElementById("item-list").addEventListener("click", function(event) {
+    if (event.target.classList.contains("delete-button")) {
+        // Perform delete action
+        event.target.parentElement.remove(); // Removes the item from the list
+    }
+});
+
+In this example, any button with the class delete-button inside #item-list will trigger the delete function without needing separate listeners. This is especially useful in scenarios like to-do lists, message boards, or dynamically generated elements.
+
+
+

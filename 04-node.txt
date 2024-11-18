@@ -1,0 +1,14 @@
+Explain the purpose of the addEventListener method in JavaScript and how it facilitates event handling in the DOM.
+
+addEventListener is a method in JavaScript used to attach an event (like click, mouseover, etc.) to an element. Its purpose is to make web pages interactive, so that specific functions can execute in response to user actions.
+
+Example:
+document.getElementById("myButton").addEventListener("click", function() {
+    alert("Button was clicked!");
+});
+
+Here, when the button is clicked, an alert will be shown. Some key points about addEventListener:-
+
+1. You can add multiple events to a single element.
+2. By attaching an event to a parent element, you can also perform event delegation.
+3. It supports the capture and bubbling phases of events, which is helpful for complex interactions.

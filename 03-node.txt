@@ -1,0 +1,6 @@
+Explain the concept of Event Bubbling in the DOM.
+
+Event Bubbling is a concept in the DOM (Document Object Model) where an event triggered on a child element will "bubble up" and also trigger the same event on its parent elements, moving up the DOM tree until it reaches the top (typically the document).
+
+How Event Bubbling Works :-
+When an event, like a click, occurs on a child element, the event first triggers on that specific element. Then, it "bubbles" up through each ancestor element in the DOM hierarchy, triggering any event listeners attached to those parent elements along the way.

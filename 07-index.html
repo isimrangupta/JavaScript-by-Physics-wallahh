@@ -1,0 +1,53 @@
+<!-- Q7. Build a dynamic dropdown menu using HTML and JavaScript. Create an HTML structure for a navigation
+menu with dropdowns. Use JavaScript to toggle the visibility of dropdowns when the user hovers over menu items. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Dropdown Menu</title>
+    <style>
+        li{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">Services</a>
+                <ul class="dropdown">
+                    <li><a href="">Submenu 4</a></li>
+                    <li><a href="">Submenu 5</a></li>
+                    <li><a href="">Submenu 6</a></li>
+                </ul>
+            </li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </nav>
+    
+
+    <script>
+        // Get all menu items that can have dropdowns
+const menuItems = document.querySelectorAll('.menu > li');
+
+menuItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        const dropdown = item.querySelector('.dropdown');
+        if (dropdown) {
+            dropdown.style.display = 'block'; // Show the dropdown
+        }
+    });
+
+    item.addEventListener('mouseleave', () => {
+        const dropdown = item.querySelector('.dropdown');
+        if (dropdown) {
+            dropdown.style.display = 'none'; // Hide the dropdown
+        }
+    });
+});
+    </script>
+</body>
+</html>
